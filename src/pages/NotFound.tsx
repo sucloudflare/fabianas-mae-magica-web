@@ -1,5 +1,8 @@
+
+import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const NotFound = () => {
   const location = useLocation();
@@ -12,13 +15,18 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <div className="min-h-screen flex items-center justify-center bg-mothers-cream/30">
+      <div className="text-center p-8">
+        <h1 className="text-6xl font-script magical-text mb-4">404</h1>
+        <div className="text-8xl mb-8 animate-float">🌸</div>
+        <p className="text-xl text-mothers-purple mb-8">
+          Oops! Parece que esta página não existe.
+        </p>
+        <Link to="/">
+          <Button className="button-magical">
+            Voltar para o Início
+          </Button>
+        </Link>
       </div>
     </div>
   );

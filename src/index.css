@@ -1,101 +1,133 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 340 100% 98%;
+    --foreground: 340 50% 30%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 340 50% 98%;
+    --card-foreground: 340 50% 30%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 340 50% 98%;
+    --popover-foreground: 340 50% 30%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 325 100% 70%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 340 50% 90%;
+    --secondary-foreground: 340 50% 30%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 340 40% 96%;
+    --muted-foreground: 340 50% 50%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 280 67% 74%;
+    --accent-foreground: 340 50% 98%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 340 50% 80%;
+    --input: 340 50% 80%;
+    --ring: 340 50% 70%;
 
-    --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --radius: 0.75rem;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-montserrat;
+    background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff97c2' fill-opacity='0.1'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer components {
+  .font-script {
+    font-family: 'Dancing Script', cursive;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .sparkle {
+    @apply before:content-['✨'] before:absolute before:-top-2 before:-left-2 before:animate-sparkle after:content-['✨'] after:absolute after:-bottom-2 after:-right-2 after:animate-sparkle;
+  }
+  
+  .button-magical {
+    @apply relative overflow-hidden bg-gradient-to-r from-mothers-rose to-mothers-purple text-white px-6 py-3 rounded-full font-bold shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105;
+  }
+  
+  .card-magical {
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-xl border border-mothers-pink/20 hover:shadow-mothers-purple/20 hover:border-mothers-purple/40 transition-all duration-500;
+  }
+  
+  .magical-text {
+    @apply bg-gradient-to-r from-mothers-pink via-mothers-purple to-mothers-gold bg-clip-text text-transparent;
+  }
+  
+  .gift-box {
+    @apply relative w-24 h-24 bg-gradient-to-br from-mothers-pink to-mothers-purple rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:scale-110;
+  }
+  
+  .gift-box:before {
+    content: '';
+    @apply absolute top-0 left-1/2 -translate-x-1/2 w-2 h-full bg-mothers-gold;
+  }
+  
+  .gift-box:after {
+    content: '';
+    @apply absolute top-1/2 left-0 -translate-y-1/2 w-full h-2 bg-mothers-gold;
+  }
+  
+  .floating {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .floating-delay-1 {
+    animation: float 6s ease-in-out 0.5s infinite;
+  }
+  
+  .floating-delay-2 {
+    animation: float 6s ease-in-out 1s infinite;
+  }
+  
+  .floating-delay-3 {
+    animation: float 6s ease-in-out 1.5s infinite;
+  }
+
+  .photo-frame {
+    @apply relative p-3 bg-white rounded-lg shadow-lg;
+    @apply before:absolute before:-top-1 before:-left-1 before:-right-1 before:-bottom-1 before:bg-gradient-to-br before:from-mothers-rose before:to-mothers-purple before:rounded-lg before:-z-10;
+  }
+
+  .sparkle-button {
+    @apply relative overflow-hidden bg-white text-mothers-purple px-6 py-3 rounded-full font-bold shadow-md;
+  }
+  
+  .sparkle-button:before,
+  .sparkle-button:after {
+    content: '✨';
+    @apply absolute text-mothers-gold opacity-0 transition-opacity duration-300;
+  }
+  
+  .sparkle-button:before {
+    @apply -top-1 -left-1;
+  }
+  
+  .sparkle-button:after {
+    @apply -bottom-1 -right-1;
+  }
+  
+  .sparkle-button:hover:before,
+  .sparkle-button:hover:after {
+    @apply opacity-100;
   }
 }

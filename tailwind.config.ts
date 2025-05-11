@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,13 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				mothers: {
+					pink: '#FF97C2',
+					rose: '#FF6EB3',
+					purple: '#9B87F5',
+					gold: '#FFD700',
+					cream: '#FFF8E1'
 				}
 			},
 			borderRadius: {
@@ -84,11 +92,37 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				float: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-20px)' },
+				},
+				sparkle: {
+					'0%': { transform: 'scale(0) rotate(0deg)', opacity: '0' },
+					'50%': { transform: 'scale(1) rotate(90deg)', opacity: '1' },
+					'100%': { transform: 'scale(0) rotate(180deg)', opacity: '0' }
+				},
+				pulse: {
+					'0%, 100%': { opacity: '1', transform: 'scale(1)' },
+					'50%': { opacity: '0.8', transform: 'scale(1.05)' }
+				},
+				bounce: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
+				},
+				spin: {
+					from: { transform: 'rotate(0deg)' },
+					to: { transform: 'rotate(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 5s ease-in-out infinite',
+				'sparkle': 'sparkle 2s ease-in-out infinite',
+				'pulse': 'pulse 2s ease-in-out infinite',
+				'bounce': 'bounce 2s ease-in-out infinite',
+				'spin': 'spin 10s linear infinite',
 			}
 		}
 	},
