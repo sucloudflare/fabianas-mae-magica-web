@@ -24,7 +24,7 @@ const PuzzleGame = () => {
   const [time, setTime] = useState(0);
   const [difficulty, setDifficulty] = useState<3 | 4>(3); // 3x3 or 4x4
   
-  const puzzleImage = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80";
+  const puzzleImage = "https://i.ibb.co/vxqVZ4cM/IMG-20250511-WA0000-1.jpg";
   
   useEffect(() => {
     if (gameStarted && !isComplete) {

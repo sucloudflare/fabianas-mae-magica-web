@@ -23,12 +23,13 @@ const HeroBanner: React.FC = () => {
           </h1>
           
           <div className="photo-frame inline-block mb-8">
-            <img 
-              src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
-              alt="Fabiana" 
-              className="w-64 h-64 object-cover rounded"
-            />
-          </div>
+  <img 
+    src="https://i.ibb.co/vxqVZ4cM/IMG-20250511-WA0000-1.jpg" 
+    alt="Fabiana" 
+    className="w-64 h-64 object-cover rounded"
+  />
+</div>
+
           
           <h2 className="text-3xl font-script text-mothers-purple mb-4">Para Fabiana</h2>
           
