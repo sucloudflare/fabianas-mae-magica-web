@@ -109,7 +109,7 @@
   }
 
   .sparkle-button {
-    @apply relative overflow-hidden bg-white text-mothers-purple px-6 py-3 rounded-full font-bold shadow-md;
+    @apply relative overflow-hidden bg-white text-mothers-purple px-6 py-3 rounded-full font-bold shadow-md transition-all duration-300;
   }
   
   .sparkle-button:before,
@@ -129,5 +129,248 @@
   .sparkle-button:hover:before,
   .sparkle-button:hover:after {
     @apply opacity-100;
+  }
+  
+  /* Card hover effect */
+  .hover-card-effect {
+    @apply transition-all duration-500;
+  }
+  
+  .hover-card-effect:hover {
+    @apply shadow-lg transform -translate-y-1;
+  }
+  
+  /* Magic sparkle animation */
+  .sparkle-animation {
+    @apply relative;
+  }
+  
+  .sparkle-animation::before,
+  .sparkle-animation::after {
+    content: '✨';
+    @apply absolute text-mothers-gold opacity-0;
+    animation: sparkle-appear 2s ease-in-out infinite;
+  }
+  
+  .sparkle-animation::before {
+    @apply -top-2 -left-2;
+    animation-delay: 0s;
+  }
+  
+  .sparkle-animation::after {
+    @apply -bottom-2 -right-2;
+    animation-delay: 1s;
+  }
+  
+  /* Glitter text effect */
+  .glitter-text {
+    @apply relative inline-block;
+    background-image: linear-gradient(to right, #FF97C2, #9B87F5, #FFD700, #FF97C2);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: glitter 4s linear infinite;
+  }
+  
+  /* Wave animation */
+  .wave-animation {
+    @apply relative overflow-hidden;
+  }
+  
+  .wave-animation::after {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background: linear-gradient(60deg, rgba(255, 151, 194, 0.3) 0%, rgba(155, 135, 245, 0.3) 100%);
+    animation: wave 4s ease-in-out infinite;
+  }
+  
+  /* Rotate animation */
+  .rotate-slow {
+    animation: rotate 20s linear infinite;
+  }
+  
+  /* Shimmer effect */
+  .shimmer {
+    @apply relative overflow-hidden;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.8) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+  
+  /* Special 3D button */
+  .button-3d {
+    @apply relative bg-gradient-to-r from-mothers-pink to-mothers-purple text-white px-6 py-3 rounded-xl font-bold transition-all duration-300 shadow-md;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+  }
+  
+  .button-3d:hover {
+    transform: perspective(500px) rotateX(10deg) rotateY(-10deg) scale(1.05);
+    @apply shadow-lg;
+  }
+  
+  .button-3d:active {
+    transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(0.95);
+    @apply shadow-inner;
+  }
+  
+  /* Heartbeat effect */
+  .heartbeat {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+  
+  /* Magical border glow */
+  .border-glow {
+    @apply relative rounded-xl overflow-hidden;
+  }
+  
+  .border-glow::before {
+    content: '';
+    @apply absolute -inset-1;
+    background: linear-gradient(
+      45deg,
+      #FF97C2, #9B87F5, #FFD700, #FF97C2, #9B87F5
+    );
+    background-size: 300% 300%;
+    animation: border-glow 4s linear infinite;
+    filter: blur(5px);
+    z-index: -1;
+  }
+  
+  /* Flip card effect */
+  .flip-card {
+    @apply relative w-full h-full perspective-1000;
+  }
+  
+  .flip-card-inner {
+    @apply relative w-full h-full transition-transform duration-700;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-card-front, 
+  .flip-card-back {
+    @apply absolute w-full h-full backface-hidden;
+  }
+  
+  .flip-card-back {
+    transform: rotateY(180deg);
+  }
+  
+  /* Confetti button animation */
+  .confetti-button {
+    @apply relative overflow-hidden;
+  }
+  
+  .confetti-button::before {
+    content: '';
+    @apply absolute inset-0 opacity-0;
+    background-image: 
+      radial-gradient(circle, #FF97C2 10%, transparent 10%),
+      radial-gradient(circle, #9B87F5 10%, transparent 10%),
+      radial-gradient(circle, #FFD700 10%, transparent 10%);
+    background-size: 3em 3em;
+    background-position: 0 0, 1.5em 1.5em, 1em 1em;
+    transition: opacity 0.3s;
+  }
+  
+  .confetti-button:hover::before {
+    @apply opacity-30;
+  }
+}
+
+/* Custom keyframes animations */
+@keyframes sparkle-appear {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+@keyframes glitter {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(-30%) rotate(0deg); }
+  50% { transform: translateY(0%) rotate(3deg); }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes border-glow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1) rotate(90deg); opacity: 1; }
+  100% { transform: scale(0) rotate(180deg); opacity: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Additional utility classes */
+.backface-hidden {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Make the site responsive */
+@media (max-width: 640px) {
+  .button-magical, .sparkle-button {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .gift-box {
+    @apply w-20 h-20;
   }
 }
